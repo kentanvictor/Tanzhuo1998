@@ -5,20 +5,15 @@
 #include"stdio.h"
 void fun(int a[5],int *max)
 {
-	int i,j,t;
-	for(i=0;i<5;i++)
+	int i;
+	*max = a[0];
+	for(i=1;i<5;i++)
 	{
-		for(j=0;j<i;j++)
+		if(*max<a[i])
 		{
-			if(a[j]>a[j+1])
-			{
-				t=a[j];
-				a[j]=a[j+1];
-				a[j+1]=t;
-			}
+			*max=a[i];
 		}
 	}
-	*max=a[4];
 }
 void main()
 {
